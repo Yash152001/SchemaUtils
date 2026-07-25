@@ -382,7 +382,7 @@ private class SchemaUtilsTest {
         String hexDigits = '0123456789ABCDEF';
         Integer high = byteValue / 16;
         Integer low = Math.mod(byteValue, 16);
-        String hexStr = String.valueOf(hexDigits.charAt(high)) + String.valueOf(hexDigits.charAt(low));
+        String hexStr = hexDigits.substring(high, high + 1) + hexDigits.substring(low, low + 1);
         return EncodingUtil.convertFromHex(hexStr);
     }
 
