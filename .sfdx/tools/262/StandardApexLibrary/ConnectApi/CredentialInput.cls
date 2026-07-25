@@ -1,0 +1,40 @@
+/**
+ * Credential input.
+ */
+global class CredentialInput {
+
+  global CredentialInput() {}
+
+  /**
+   * Authentication protocol of the external credential. Values are: AwsSv4 Basic Custom Jwt OAuth
+   */
+  global ConnectApi.CredentialAuthenticationProtocol authenticationProtocol;
+
+  /**
+   * Authentication protocol variant of the external credential. Values are: AwsSv4_STS â€”AWS Signature Version 4 with Security Token Service. ClientCredentialsClientSecret â€”OAuth 2.0 Client Credentials client secret. Client secrets are sent in the calloutâ€™s request body. ClientCredentialsClientSecretBasic â€”OAuth 2.0 Client Credentials client secret. Client secrets are sent in the calloutâ€™s authorization header, as with Basic authentication. ClientCredentialsJwtAssertion â€”OAuth 2.0 Client Credentials JSON Web Token assertion. JwtBearer â€”OAuth 2.0 JSON Web Token bearer flow. NoAuthentication â€”No authentication. RolesAnywhere â€”AWS Signature Version 4 with Identity and Access Management (IAM) Roles Anywhere. If specified, the authentication protocol variant must match the actual protocol variant of the external credential.
+   */
+  global ConnectApi.CredentialAuthenticationProtocolVariant authenticationProtocolVariant;
+
+  /**
+   * Map of protocol-specific credentials. Authentication protocols have credential allowlists and encryption rules. AwsSv4 â€” awsAccessKeyId (not encrypted), awsSecretAccessKey (encrypted), awsRoleArn (not encrypted) Custom â€”Any credential name is valid (user sets encryption rules)
+   */
+  global Map < String , ConnectApi.CredentialValueInput > credentials;
+
+  /**
+   * Fully qualified developer name of the external credential.
+   */
+  global String externalCredential;
+
+  /**
+   * Name of the external credential named principal.
+   */
+  global String principalName;
+
+  /**
+   * Type of credential principal. Values are: AwsStsPrincipal NamedPrincipal PerUserPrincipal
+   */
+  global ConnectApi.CredentialPrincipalType principalType;
+
+  global Object clone() {}
+
+}
