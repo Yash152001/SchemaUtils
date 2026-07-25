@@ -23,7 +23,7 @@
  *      hasFieldSet, isFieldAccessible, isFieldCreateable, isFieldUpdateable)
  *      never throw - they simply return false for invalid input.
  *
- * @author  Yash Rajendra Gurharikar(with Claude)
+ * @author  Yash (with Claude)
  * @since   2026
  */
 public with sharing class SchemaUtils {
